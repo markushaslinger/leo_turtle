@@ -8,7 +8,7 @@ jobs:
     
     env:
       BUILD_CONFIG: 'Release'
-      WORK_DIR: 'SimpleDrawing'
+      WORK_DIR: 'LeoTurtle'
 
     runs-on: ubuntu-latest
 
