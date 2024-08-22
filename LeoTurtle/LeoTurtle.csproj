@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <PackageType>Dependency</PackageType>
+        <PackageVersion>1.0.0</PackageVersion>
+        <PackageId>HTLLeonding.Utility.Turtle</PackageId>
+        <PackageReadmeFile>readme.md</PackageReadmeFile>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
+        <Title>HTL Leonding Turtle Drawing Library</Title>
+        <Authors>M. Haslinger</Authors>
+        <Description>Allows ordering a turtle around a beach to draw simple shapes</Description>
+        <PackageTags>skia;avalonia;HTL-Leonding</PackageTags>
+        <RepositoryUrl>https://github.com/markushaslinger/leo_turtle</RepositoryUrl>
+
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="HTLLeonding.Utility.SimpleDrawing" Version="3.2.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="Data\smart_turtle.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Data\turtle.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+    
+    <ItemGroup>
+        <None Include="readme.md" Pack="true" PackagePath="" />
+        <None Include="LICENSE" Pack="true" PackagePath=""/>
+    </ItemGroup>
+
+</Project>
