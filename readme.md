@@ -3,7 +3,7 @@
 Allows students to control a turtle, which can primarily only move forward and turn.
 This turtle leaves track in the sand, and by looking at this track they can draw simple shapes.
 
-![Screenshot](pics/screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/markushaslinger/leo_turtle/master/pics/screenshot.png)
 
 ## Turtle
 
