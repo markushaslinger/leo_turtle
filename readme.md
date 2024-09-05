@@ -32,8 +32,8 @@ The `SmartTurtle` went to HTL Leonding and thus became the smarter cousin of `Tu
 ```csharp
 using LeoTurtle;
 
-const int Length = 80;
-const int Width = 40;
+const int Length = 100;
+const int Width = 80;
 const string Basic = "1";
 const string Smart = "2";
 
@@ -43,12 +43,12 @@ switch (choice)
 {
     case Basic:
     {
-        Beach.Prepare<Turtle>(WalkPath, 80, 40);
+        Beach.Prepare<Turtle>(WalkPath, Length, Width);
         break;
     }
     case Smart:
     {
-        Beach.Prepare<SmartTurtle>(WalkSmartPath, 80, 40);
+        Beach.Prepare<SmartTurtle>(WalkSmartPath, Length, Width);
         break;
     }
     default:
@@ -89,17 +89,42 @@ static void WalkPath(Turtle turtle)
 
 static void WalkSmartPath(SmartTurtle turtle)
 {
-    turtle.Teleport(Length / 2D, Width / 2D);
+    const double Distance = 23.41;
+    var center = new Point(Length / 2D, Width / 2D);
+    var starPoint1 = GetPointByOffset(center, 0, 30);
+    var starPoint2 = GetPointByOffset(center, 8, 8);
+    var starPoint3 = GetPointByOffset(center, 30, 0);
+    var starPoint4 = GetPointByOffset(center, 8, -8);
+    var starPoint5 = GetPointByOffset(center, 0, -30);
+    var starPoint6 = GetPointByOffset(center, -8, -8);
+    var starPoint7 = GetPointByOffset(center, -30, 0);
+    var starPoint8 = GetPointByOffset(center, -8, 8);
     
-    turtle.LookAt(50, 30);
-    turtle.MoveForward(15);
-    turtle.Turn(45);
-    turtle.MoveForward(5);
-    turtle.LookAt(0,0);
-    turtle.MoveForward(30);
+    turtle.Teleport(starPoint1.X, starPoint1.Y, resetRotation: true);
+    turtle.LookAt(starPoint2.X, starPoint2.Y);
+    turtle.MoveForward(Distance);
+    turtle.LookAt(starPoint3.X, starPoint3.Y);
+    turtle.MoveForward(Distance);
+    turtle.LookAt(starPoint4.X, starPoint4.Y);
+    turtle.MoveForward(Distance);
+    turtle.LookAt(starPoint5.X, starPoint5.Y);
+    turtle.MoveForward(Distance);
+    turtle.LookAt(starPoint6.X, starPoint6.Y);
+    turtle.MoveForward(Distance);
+    turtle.LookAt(starPoint7.X, starPoint7.Y);
+    turtle.MoveForward(Distance);
+    turtle.LookAt(starPoint8.X, starPoint8.Y);
+    turtle.MoveForward(Distance);
+    turtle.LookAt(starPoint1.X, starPoint1.Y);
+    turtle.MoveForward(Distance);
     
     Console.WriteLine($"Turtle has moved: {turtle.TravelDistanceMeters:F1} meters");
+
+    static Point GetPointByOffset(Point origin, double xOffset, double yOffset) 
+        => new(origin.X + xOffset, origin.Y + yOffset);
 }
+
+readonly record struct Point(double X, double Y);
 ```
 
 > I recommend providing the `Beach.Prepare<T>` call for the students and only letting them work within a method similar to `WalkPath` (from which they may call other methods, of course).
