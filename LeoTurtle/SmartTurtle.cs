@@ -15,8 +15,9 @@ public sealed class SmartTurtle : Turtle
     public double[] GetPosition()
     {
         var (x, y) = CurrentPosition;
+        
         var horizontal = Beach.PixelToMeter(x);
-        var vertical = Beach.PixelToMeter(y);
+        var vertical = Beach.PixelToMeter(InvertY(y));
 
         return [horizontal, vertical];
     }
@@ -29,7 +30,7 @@ public sealed class SmartTurtle : Turtle
     public void LookAt(double horizontalPosition, double verticalPosition)
     {
         var x = Beach.MeterToPixel(horizontalPosition);
-        var y = Beach.MeterToPixel(verticalPosition);
+        var y = InvertY(Beach.MeterToPixel(verticalPosition));
         var (currentX, currentY) = CurrentPosition;
 
         var deltaX = x - currentX;

@@ -101,7 +101,7 @@ public class Turtle
     public void Teleport(double newHorizontalPosition, double newVerticalPosition, bool resetRotation = true)
     {
         var pixelX = Beach.MeterToPixel(newHorizontalPosition);
-        var pixelY = _maxY - Beach.MeterToPixel(newVerticalPosition);
+        var pixelY = InvertY(Beach.MeterToPixel(newVerticalPosition));
 
         var newPoint = LimitToBoundaries(new Point(pixelX, pixelY));
 
@@ -111,6 +111,13 @@ public class Turtle
             Rotation = DefaultRotation;
         }
     }
+    
+    /// <summary>
+    ///     Adjusts the y coordinate so that higher values are at the bottom of the canvas as common in computer graphics
+    /// </summary>
+    /// <param name="y">The original y value</param>
+    /// <returns>The inverted y value</returns>
+    protected double InvertY(double y) => _maxY - y;
 
     internal void DrawSelf()
     {
