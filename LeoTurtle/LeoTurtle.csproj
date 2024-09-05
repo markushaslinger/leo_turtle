@@ -31,12 +31,16 @@
     </ItemGroup>
 
     <ItemGroup>
-      <None Update="Data\smart_turtle.png">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="Data\turtle.png">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
+        <None Update="Data\smart_turtle.png">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <Pack>true</Pack>
+            <PackagePath>Data\</PackagePath>
+        </None>
+        <None Update="Data\turtle.png">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <Pack>true</Pack>
+            <PackagePath>Data\</PackagePath>
+        </None>
     </ItemGroup>
     
     <ItemGroup>
