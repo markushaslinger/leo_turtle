@@ -2,7 +2,8 @@
 
     <PropertyGroup>
         <PackageType>Dependency</PackageType>
-        <PackageVersion>1.1.2</PackageVersion>
+        <PackageVersion>1.1.3</PackageVersion>
+        <VersionSuffix>dev1</VersionSuffix>
         <PackageId>HTLLeonding.Utility.Turtle</PackageId>
         <PackageReadmeFile>readme.md</PackageReadmeFile>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
@@ -31,22 +32,23 @@
     </ItemGroup>
 
     <ItemGroup>
-        <None Update="Data\smart_turtle.png">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        <Content Include="Data\smart_turtle.png">
             <Pack>true</Pack>
-            <PackagePath>contentFiles\any\any\</PackagePath>
-        </None>
-        <None Update="Data\turtle.png">
+            <PackagePath>contentFiles/any/any/Data</PackagePath>
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Data\turtle.png">
             <Pack>true</Pack>
-            <PackagePath>contentFiles\any\any\</PackagePath>
-        </None>
+            <PackagePath>contentFiles/any/any/Data</PackagePath>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
     </ItemGroup>
 
     <ItemGroup>
         <None Include="../readme.md" Pack="true" PackagePath=""/>
         <None Include="../pics/screenshot.png" Pack="true" PackagePath=""/>
         <None Include="../LICENSE" Pack="true" PackagePath=""/>
+        <None Include="Data/image-license.md" Pack="true" PackagePath=""/>
     </ItemGroup>
 
 </Project>
