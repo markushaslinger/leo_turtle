@@ -1,0 +1,14 @@
+<Project>
+    <ItemGroup>
+        <None Include="$(MSBuildThisFileDirectory)\Data\turtle.png">
+            <Visible>false</Visible>
+            <Link>Data/turtle.png</Link>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Include="$(MSBuildThisFileDirectory)\Data\smart_turtle.png">
+            <Visible>false</Visible>
+            <Link>Data/smart_turtle.png</Link>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
+</Project>

@@ -2,8 +2,7 @@
 
     <PropertyGroup>
         <PackageType>Dependency</PackageType>
-        <PackageVersion>1.1.3</PackageVersion>
-        <VersionSuffix>dev1</VersionSuffix>
+        <PackageVersion>1.1.4</PackageVersion>
         <PackageId>HTLLeonding.Utility.Turtle</PackageId>
         <PackageReadmeFile>readme.md</PackageReadmeFile>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
@@ -32,16 +31,19 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Content Include="Data\smart_turtle.png">
+        <None Include="HTLLeonding.Utility.Turtle.targets" Pack="true" PackagePath="buildTransitive/"/>
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="Data\smart_turtle.png">
             <Pack>true</Pack>
-            <PackagePath>contentFiles/any/any/Data</PackagePath>
+            <PackagePath>buildTransitive/Data</PackagePath>
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </Content>
-        <Content Include="Data\turtle.png">
+        </None>
+        <None Include="Data\turtle.png">
             <Pack>true</Pack>
-            <PackagePath>contentFiles/any/any/Data</PackagePath>
+            <PackagePath>buildTransitive/Data</PackagePath>
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </Content>
+        </None>
     </ItemGroup>
 
     <ItemGroup>
