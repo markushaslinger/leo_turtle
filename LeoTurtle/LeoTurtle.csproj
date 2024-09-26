@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <PackageType>Dependency</PackageType>
-        <PackageVersion>1.1.0</PackageVersion>
+        <PackageVersion>1.1.1</PackageVersion>
         <PackageId>HTLLeonding.Utility.Turtle</PackageId>
         <PackageReadmeFile>readme.md</PackageReadmeFile>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
@@ -34,12 +34,12 @@
         <None Update="Data\smart_turtle.png">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
             <Pack>true</Pack>
-            <PackagePath>Data\</PackagePath>
+            <PackagePath>contentFiles\any\any\Data\</PackagePath>
         </None>
         <None Update="Data\turtle.png">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
             <Pack>true</Pack>
-            <PackagePath>Data\</PackagePath>
+            <PackagePath>contentFiles\any\any\Data\</PackagePath>
         </None>
     </ItemGroup>
 
